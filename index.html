@@ -55,7 +55,7 @@
       <a class="btn btn-outline" href="/join">Pledge</a>
       <a class="btn btn-primary" href="/donate">Donate</a>
     </div>
-    <button class="menu-btn" type="button" data-menu aria-label="Menu">☰</button>
+    <button class="menu-btn" type="button" data-menu aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </div>
   <div class="wrap mobile-nav" data-mobile>
     <a href="/">The emergency</a>
@@ -104,8 +104,8 @@
 </section>
 <section class="cream-band section" id="share">
   <div class="wrap">
-    <p class="kicker" style="color:var(--fairway)">What to do tonight</p>
-    <h2 style="font-size:var(--display-size);max-width:16ch">Three moves before the grass turns brown.</h2>
+    <p class="kicker fair">What to do tonight</p>
+    <h2 class="display">Three moves before the grass turns brown.</h2>
     <ol class="tonight">
       <li>
         <p class="n">01</p>
@@ -154,19 +154,19 @@
 </section>
 <section class="fairway-band section">
   <div class="wrap split split-land">
-    <div>
+  <div class="photo-stack">
       <figure>
         <img class="rounded" src="/photos/sunset-fairway.jpg" alt="Sunset over palms and the Rio Bravo clubhouse" />
-        <figcaption>Clubhouse and palms at last light.</figcaption>
+        <figcaption>Clubhouse and palms at last light</figcaption>
       </figure>
-      <div class="two-col" style="margin-top:1rem">
-        <img class="rounded" src="/photos/foothill-fairway.jpg" alt="Foothill fairway at golden hour" style="border-radius:0.75rem" />
-        <img class="rounded" src="/photos/green-bunker.jpg" alt="Green and bunker with mountains beyond" style="border-radius:0.75rem" />
+      <div class="two-col">
+        <img src="/photos/foothill-fairway.jpg" alt="Foothill fairway at golden hour" />
+        <img src="/photos/green-bunker.jpg" alt="Green and bunker with mountains beyond" />
       </div>
     </div>
     <div>
       <p class="kicker">The land</p>
-      <h2 style="font-size:var(--display-size)">A Graves course at the door of the Sierra.</h2>
+      <h2 class="display">A Graves course at the door of the Sierra.</h2>
       <p class="sage">Rio Bravo Country Club opened in 1975 as an 18-hole, par-72 championship layout by Robert Muir Graves, about 7,000 yards from the back tees. It sits at 15200 Casa Club Drive — eleven miles northeast of downtown, on the western entrance to the southern Sierra Nevada.</p>
       <dl class="stats">
         <div><dt>Acres</dt><dd>328</dd></div>
@@ -179,10 +179,10 @@
 </section>
 <section class="section">
   <div class="wrap">
-    <p class="kicker" style="color:var(--fairway)">The arithmetic</p>
-    <h2 style="font-size:var(--display-size);max-width:18ch">Losing the course costs more than buying it.</h2>
-    <p class="muted" style="max-width:40rem">In 2022 the neighbor-owners asked $4.9 million for 328 acres. Do the household math instead of hoping a distant buyer loves golf.</p>
-    <div class="math-grid" style="margin-top:2.2rem">
+    <p class="kicker fair">The arithmetic</p>
+    <h2 class="display">Losing the course costs more than buying it.</h2>
+    <p class="lede">In 2022 the neighbor-owners asked $4.9 million for 328 acres. Do the household math instead of hoping a distant buyer loves golf.</p>
+    <div class="math-grid">
       <div class="math">
         <p class="kicker danger">If the gates stay closed</p>
         <h3>What one house can lose</h3>
@@ -196,7 +196,7 @@
         </dl>
       </div>
       <div class="math">
-        <p class="kicker" style="color:var(--fairway)">If neighbors buy</p>
+        <p class="kicker fair">If neighbors buy</p>
         <h3>What 200 households can raise</h3>
         <label>Households in a buying group
           <input id="homes" type="range" min="20" max="400" step="5" value="200" />
@@ -216,16 +216,16 @@
   </div>
 </section>
 <section class="ink-band section">
-  <div class="wrap" style="max-width:48rem">
+  <div class="wrap measure">
     <p class="kicker">If you hold the note</p>
-    <h2 style="font-size:var(--display-size)">A neighbor bid is not a protest. It is a close.</h2>
+    <h2 class="display">A neighbor bid is not a protest. It is a close.</h2>
     <p>In 2017, homeowners already bought this club to keep it a course. That structure still works. Two hundred households around 328 acres have more to lose than any out-of-town builder has to gain. We will pay off secured debt, deed-restrict the golf parcels, and run the land as a neighborhood amenity — not a 22-lot entitlement fight with 200 adjacent owners.</p>
   </div>
 </section>
 <section class="cream-band section">
   <div class="wrap">
-    <p class="kicker" style="color:var(--fairway)">How we got here</p>
-    <h2 style="font-size:var(--display-size);max-width:18ch">This club has been rescued before. It has never been stable.</h2>
+    <p class="kicker fair">How we got here</p>
+    <h2 class="display">This club has been rescued before. It has never been stable.</h2>
     <ol class="timeline">
       <li><div class="year">1975</div><div><h3>A championship course in the foothills</h3><p>Robert Muir Graves opens an 18-hole, par-72 layout at the western door of the southern Sierra.</p></div></li>
       <li><div class="year">1992–2017</div><div><h3>Five owners in twenty-five years</h3><p>The club changes hands repeatedly. The tennis parcel was sold and became about 170 housing units. When the club is weak, the land is the prize.</p></div></li>
@@ -240,9 +240,8 @@
 </section>
 <section class="section">
   <div class="wrap">
-    <p class="kicker" style="color:var(--fairway)">A serious bid</p>
-    <h2 style="font-size:var(--display-size);max-width:16ch">Five moves to own the land.</h2>
-    <p><a class="btn btn-outline" href="/plan">Full playbook</a></p>
+    <p class="kicker fair">A serious bid</p>
+    <h2 class="display">Five moves to own the land.</h2>
     <ol class="plan-list">
       <li><p class="n">01</p><div><h3>Stand up the vehicle</h3><p>Form a California nonprofit mutual-benefit corporation or member-owned LLC — the same structure neighbors used in 2017.</p></div></li>
       <li><p class="n">02</p><div><h3>Map the debt, not the rumor</h3><p>Pull title, recorded liens, and the foreclosure notices. Neighbors can be a buyer — but only with clean numbers.</p></div></li>
@@ -250,12 +249,13 @@
       <li><p class="n">04</p><div><h3>Make an offer the noteholder can take</h3><p>A neighbor bid that pays off secured debt and keeps the land as a course is often more attractive than a subdivision fight.</p></div></li>
       <li><p class="n">05</p><div><h3>Lock it as a course, forever</h3><p>Put a conservation covenant on the golf parcels so the next crisis cannot turn fairways into lots.</p></div></li>
     </ol>
+    <p class="plan-lead"><a class="btn btn-outline" href="/plan">Read the full playbook</a></p>
   </div>
 </section>
-<section class="section" style="background:var(--paper-2);border-top:1px solid var(--line)">
+<section class="section cream-band">
   <div class="wrap cta-grid">
-    <div class="card">
-      <p class="kicker" style="color:var(--fairway)">If you live here</p>
+    <div class="card cta-pledge">
+      <p class="kicker fair">If you live here</p>
       <h2>Sign the neighbor pledge.</h2>
       <p class="muted">Name, street, and a conditional capital number. That list is how we show a noteholder there is a buyer besides a homebuilder.</p>
       <p><a class="btn btn-primary btn-lg" href="/join">Make a pledge</a></p>
@@ -290,13 +290,20 @@
     </div>
     <div>
       <p class="kicker">On this site</p>
-      <p><a href="/plan">The purchase plan</a><br/><a href="/join">Neighbor pledge</a><br/><a href="/donate">Legal fund</a><br/><a href="/updates">Updates & sources</a></p>
+      <ul class="foot-links">
+        <li><a href="/plan">The purchase plan</a></li>
+        <li><a href="/join">Neighbor pledge</a></li>
+        <li><a href="/donate">Legal fund</a></li>
+        <li><a href="/updates">Updates & sources</a></li>
+      </ul>
     </div>
     <div>
       <p class="kicker">Organizers</p>
-      <p><a href="https://signal.org/download/" target="_blank" rel="noreferrer">Organizing on Signal</a></p>
-      <p class="sage" style="font-size:0.8rem">Pledges travel end-to-end encrypted. This site never keeps your name, street, or dollar figure.</p>
-      <p class="sage" style="font-size:0.8rem">Save Rio Bravo is not affiliated with Scarlet & Gray Golf Club or current ownership. Not legal advice. Verify court filings before you commit capital.</p>
+      <ul class="foot-links">
+        <li><a href="https://signal.org/download/" target="_blank" rel="noreferrer">Organizing on Signal</a></li>
+      </ul>
+      <p class="sage" style="font-size:0.8rem;margin-top:1rem">Pledges travel end-to-end encrypted. This site never keeps your name, street, or dollar figure.</p>
+      <p class="sage" style="font-size:0.8rem;margin-top:0.7rem">Save Rio Bravo is not affiliated with Scarlet & Gray Golf Club or current ownership. Not legal advice. Verify court filings before you commit capital.</p>
     </div>
   </div>
 </footer>

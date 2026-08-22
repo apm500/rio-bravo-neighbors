@@ -54,7 +54,7 @@
       <a class="btn btn-outline" href="/join">Pledge</a>
       <a class="btn btn-primary" href="/donate">Donate</a>
     </div>
-    <button class="menu-btn" type="button" data-menu aria-label="Menu">☰</button>
+    <button class="menu-btn" type="button" data-menu aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </div>
   <div class="wrap mobile-nav" data-mobile>
     <a href="/">The emergency</a>
@@ -65,15 +65,15 @@
   </div>
 </header>
 <section class="cream-band section">
-  <div class="wrap" style="max-width:48rem">
+  <div class="wrap measure">
     <p class="kicker danger">August 21, 2026</p>
-    <h1 style="font-size:var(--display-size)">Ownership says the course is winding down — foreclosure is in motion.</h1>
+    <h1 class="display">Ownership says the course is winding down — foreclosure is in motion.</h1>
     <p>A statement released today by current ownership says Scarlet & Gray Golf Course, formerly Rio Bravo Country Club, will begin winding down all operations. It cites severe financial distress, an active multi-million-dollar note default, pending foreclosure, and a failed emergency rescue sale in Kern County Superior Court.</p>
     <p class="muted">From an August 21, 2026 ownership statement issued under the name of Jeremy Willer. It is one party’s account — not a court order.</p>
   </div>
 </section>
 <section class="section">
-  <div class="wrap" style="max-width:48rem">
+  <div class="wrap measure">
     <h2>Record</h2>
     <ol class="timeline">
       <li><div class="year">1975</div><div><h3>A championship course in the foothills</h3><p>Robert Muir Graves opens the 18-hole layout.</p></div></li>
@@ -84,7 +84,7 @@
       <li><div class="year">Feb 2026</div><div><h3>Reopened as Scarlet & Gray</h3><p>Randy Willer reopens the course to the public under a new name.</p></div></li>
       <li><div class="year">Aug 21, 2026</div><div><h3>Wind-down and foreclosure</h3><p>Ownership announces operational wind-down and pending foreclosure.</p></div></li>
     </ol>
-    <h2 style="margin-top:3rem">Straight answers</h2>
+    <h2>Straight answers</h2>
     <div class="faq">
       <details><summary>Why Signal instead of email?</summary><p>A pledge has your name, street, and a dollar figure. Email sits on Google’s servers and in forwarded inboxes. Signal is end-to-end encrypted — only you and the organizers can read it. This website never stores the form. Donations still go through PayPal because that is a payment, not a pledge.</p></details>
       <details><summary>Is the course actually in foreclosure?</summary><p>The August 21, 2026 ownership statement says yes: an active multi-million note default, pending foreclosure actions, and a failed emergency sale. That is an ownership press statement, not a recorded trustee’s sale notice. We verify the recorded documents in step two of the plan.</p></details>
@@ -93,8 +93,8 @@
       <details><summary>I don’t play golf. Why would I put money in?</summary><p>Because you live next to 328 acres of irrigated open space that sets the character and the comps of the neighborhood.</p></details>
       <details><summary>Is this affiliated with Scarlet & Gray or the Willers?</summary><p>No. Save Rio Bravo is an independent neighbor campaign, in the spirit of the 2017 homeowner purchase.</p></details>
     </div>
-    <h2 style="margin-top:3rem">Sources</h2>
-    <ul>
+    <h2>Sources</h2>
+    <ul class="sources">
       <li>Ownership wind-down statement, Aug. 21, 2026 — provided to neighbors today.</li>
       <li><a href="https://www.sfgate.com/centralcoast/article/rio-bravo-country-club-sale-17314876.php">SFGATE, July 19, 2022</a></li>
       <li><a href="https://bakersfieldnow.com/news/local/homeowners-in-escrow-to-buy-rio-bravo-country-club">BakersfieldNow, May 12, 2017</a></li>
@@ -118,13 +118,20 @@
     </div>
     <div>
       <p class="kicker">On this site</p>
-      <p><a href="/plan">The purchase plan</a><br/><a href="/join">Neighbor pledge</a><br/><a href="/donate">Legal fund</a><br/><a href="/updates">Updates & sources</a></p>
+      <ul class="foot-links">
+        <li><a href="/plan">The purchase plan</a></li>
+        <li><a href="/join">Neighbor pledge</a></li>
+        <li><a href="/donate">Legal fund</a></li>
+        <li><a href="/updates">Updates & sources</a></li>
+      </ul>
     </div>
     <div>
       <p class="kicker">Organizers</p>
-      <p><a href="https://signal.org/download/" target="_blank" rel="noreferrer">Organizing on Signal</a></p>
-      <p class="sage" style="font-size:0.8rem">Pledges travel end-to-end encrypted. This site never keeps your name, street, or dollar figure.</p>
-      <p class="sage" style="font-size:0.8rem">Save Rio Bravo is not affiliated with Scarlet & Gray Golf Club or current ownership. Not legal advice. Verify court filings before you commit capital.</p>
+      <ul class="foot-links">
+        <li><a href="https://signal.org/download/" target="_blank" rel="noreferrer">Organizing on Signal</a></li>
+      </ul>
+      <p class="sage" style="font-size:0.8rem;margin-top:1rem">Pledges travel end-to-end encrypted. This site never keeps your name, street, or dollar figure.</p>
+      <p class="sage" style="font-size:0.8rem;margin-top:0.7rem">Save Rio Bravo is not affiliated with Scarlet & Gray Golf Club or current ownership. Not legal advice. Verify court filings before you commit capital.</p>
     </div>
   </div>
 </footer>

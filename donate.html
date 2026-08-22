@@ -54,7 +54,7 @@
       <a class="btn btn-outline" href="/join">Pledge</a>
       <a class="btn btn-primary" href="/donate">Donate</a>
     </div>
-    <button class="menu-btn" type="button" data-menu aria-label="Menu">☰</button>
+    <button class="menu-btn" type="button" data-menu aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </div>
   <div class="wrap mobile-nav" data-mobile>
     <a href="/">The emergency</a>
@@ -76,9 +76,14 @@
 <section class="section">
   <div class="wrap split split-2">
     <div>
+      <p class="kicker fair">Clarity</p>
       <h2>What this is not</h2>
-      <p>It is not escrow for buying 328 acres. It is not a membership initiation. It is not a payment to current ownership.</p>
-      <p><a class="btn btn-outline" href="/join">I want to pledge capital instead</a></p>
+      <ul class="wont">
+        <li>It is not escrow for buying 328 acres.</li>
+        <li>It is not a membership initiation.</li>
+        <li>It is not a payment to current ownership.</li>
+      </ul>
+      <p style="margin-top:1.6rem"><a class="btn btn-outline" href="/join">I want to pledge capital instead</a></p>
     </div>
     
 <div class="donate">
@@ -110,13 +115,20 @@
     </div>
     <div>
       <p class="kicker">On this site</p>
-      <p><a href="/plan">The purchase plan</a><br/><a href="/join">Neighbor pledge</a><br/><a href="/donate">Legal fund</a><br/><a href="/updates">Updates & sources</a></p>
+      <ul class="foot-links">
+        <li><a href="/plan">The purchase plan</a></li>
+        <li><a href="/join">Neighbor pledge</a></li>
+        <li><a href="/donate">Legal fund</a></li>
+        <li><a href="/updates">Updates & sources</a></li>
+      </ul>
     </div>
     <div>
       <p class="kicker">Organizers</p>
-      <p><a href="https://signal.org/download/" target="_blank" rel="noreferrer">Organizing on Signal</a></p>
-      <p class="sage" style="font-size:0.8rem">Pledges travel end-to-end encrypted. This site never keeps your name, street, or dollar figure.</p>
-      <p class="sage" style="font-size:0.8rem">Save Rio Bravo is not affiliated with Scarlet & Gray Golf Club or current ownership. Not legal advice. Verify court filings before you commit capital.</p>
+      <ul class="foot-links">
+        <li><a href="https://signal.org/download/" target="_blank" rel="noreferrer">Organizing on Signal</a></li>
+      </ul>
+      <p class="sage" style="font-size:0.8rem;margin-top:1rem">Pledges travel end-to-end encrypted. This site never keeps your name, street, or dollar figure.</p>
+      <p class="sage" style="font-size:0.8rem;margin-top:0.7rem">Save Rio Bravo is not affiliated with Scarlet & Gray Golf Club or current ownership. Not legal advice. Verify court filings before you commit capital.</p>
     </div>
   </div>
 </footer>
