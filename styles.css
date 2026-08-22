@@ -191,6 +191,13 @@ ol.plain { padding-left: 1.1rem; }
 .faq summary { font-family: var(--display); font-size: 1.15rem; font-weight: 600; cursor: pointer; list-style: none; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq p { margin: 0.5rem 0 0; color: var(--ink-soft); font-size: 0.95rem; }
+.pledge-msg {
+  width: 100%; min-height: 10.5rem; margin-top: 1rem;
+  border: 1px solid var(--line); border-radius: 0.5rem;
+  background: var(--paper); padding: 0.85rem;
+  font: inherit; font-size: 0.85rem; line-height: 1.45; color: var(--ink);
+}
+.send-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
 .sticky-cta {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
   display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;

@@ -64,7 +64,7 @@
         if (navigator.share) {
           await navigator.share({
             title: "Save Rio Bravo",
-            text: "The golf course is going dark. Neighbors are organizing to buy 328 acres at Rio Bravo Country Club. Pledge at saveriobravo.com",
+            text: "The golf course is going dark. Neighbors are organizing to buy 328 acres at Rio Bravo Country Club. Pledge at saveriobravo.com — send on Signal, not email.",
             url: url,
           });
           return;
@@ -91,29 +91,108 @@
         if (capital) capital.value = btn.getAttribute("data-capital");
       });
     });
-    form.addEventListener("submit", function (e) {
+
+    function composePledge(data, roleLabel) {
+      return [
+        "Save Rio Bravo — neighbor pledge",
+        "",
+        "Name: " + (data.get("name") || ""),
+        "Signal: " + (data.get("signal") || "(not given)"),
+        "Street: " + (data.get("address") || "(not given)"),
+        "I am: " + roleLabel,
+        "Conditional capital pledge (not a payment): $" + Number(data.get("capital") || 0).toLocaleString("en-US"),
+        "",
+        "How I can help:",
+        data.get("help") || "(none)",
+        "",
+        "Sent from Save Rio Bravo — saveriobravo.com",
+      ].join("\n");
+    }
+
+    async function sendOnSignal(text) {
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: "Save Rio Bravo pledge", text: text });
+          return "shared";
+        }
+      } catch (err) {
+        if (err && err.name === "AbortError") return "cancel";
+      }
+      try {
+        await navigator.clipboard.writeText(text);
+        return "copied";
+      } catch (_) {
+        return "fail";
+      }
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        if (c === "&") return "&" + "amp;";
+        if (c === "<") return "&" + "lt;";
+        if (c === ">") return "&" + "gt;";
+        if (c === '"') return "&" + "quot;";
+        return "&#39;";
+      });
+    }
+
+    function renderDone(text, status) {
+      const download = form.getAttribute("data-signal-download") || "https://signal.org/download/";
+      const chat = form.getAttribute("data-signal-chat") || "";
+      const openHref = chat || download;
+      const openLabel = chat ? "Open Signal chat" : "Get Signal";
+      form.innerHTML =
+        '<p class="kicker">Nothing left this phone except through Signal</p>' +
+        "<h3>Send the pledge in Signal.</h3>" +
+        '<p class="muted" data-status>' + escapeHtml(status) + "</p>" +
+        '<textarea class="pledge-msg" readonly>' + escapeHtml(text) + "</textarea>" +
+        '<div class="send-row">' +
+        '<button class="btn btn-primary" type="button" data-resend>Send on Signal</button>' +
+        '<button class="btn btn-outline" type="button" data-copy>Copy pledge</button>' +
+        '<a class="btn btn-outline" href="' + openHref + '" target="_blank" rel="noreferrer">' + openLabel + "</a>" +
+        "</div>" +
+        '<p class="muted" style="margin-top:1rem;font-size:0.8rem">This site does not upload your street or dollar figure. Signal is end-to-end encrypted. Do not fall back to email.</p>';
+      form.removeAttribute("id");
+      const box = form.querySelector("[data-status]");
+      form.querySelector("[data-resend]").addEventListener("click", async function () {
+        const r = await sendOnSignal(text);
+        box.textContent =
+          r === "shared" ? "Share sheet opened. Choose Signal." :
+          r === "copied" ? "Copied again. Paste it in Signal." :
+          "Select the text above and copy it.";
+      });
+      form.querySelector("[data-copy]").addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText(text);
+          box.textContent = "Copied. Open Signal and paste.";
+        } catch (_) {
+          box.textContent = "Select the text above and copy it.";
+        }
+      });
+    }
+
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
       const data = new FormData(form);
       const role = form.querySelector('input[name="role"]:checked');
-      const subject = encodeURIComponent("Save Rio Bravo pledge — " + (data.get("name") || "neighbor"));
-      const body = encodeURIComponent(
-        [
-          "Name: " + data.get("name"),
-          "Email: " + data.get("email"),
-          "Phone: " + (data.get("phone") || ""),
-          "Address: " + (data.get("address") || ""),
-          "I am: " + (role ? role.parentNode.textContent.trim() : ""),
-          "Conditional capital pledge (not a payment): $" + Number(data.get("capital") || 0).toLocaleString("en-US"),
-          "",
-          "How I can help:",
-          data.get("help") || "",
-          "",
-          "Sent from Save Rio Bravo — saveriobravo.com",
-        ].join("\n")
-      );
-      window.location.href = "mailto:riobravoneighbors@gmail.com?subject=" + subject + "&body=" + body;
-      form.innerHTML =
-        '<p class="kicker">Pledge recorded on this device</p><h3>Now send it to the organizers.</h3><p>Your mail app should open addressed to <a href="mailto:riobravoneighbors@gmail.com">riobravoneighbors@gmail.com</a>. If it does not, tap that address and paste the same details.</p>';
+      const roleLabel = role ? role.parentNode.textContent.trim() : "";
+      const text = composePledge(data, roleLabel);
+      try {
+        localStorage.setItem("srb-pledge", JSON.stringify({
+          name: data.get("name"),
+          signal: data.get("signal"),
+          capital: data.get("capital"),
+          at: Date.now(),
+        }));
+      } catch (_) { /* ignore */ }
+      const result = await sendOnSignal(text);
+      const status =
+        result === "shared"
+          ? "Pick Signal from the share sheet — not Messages, not Mail."
+          : result === "copied"
+            ? "Pledge copied. Open Signal and paste it into a chat with organizers."
+            : "Copy the pledge below, then paste it into Signal.";
+      renderDone(text, status);
     });
   }
 })();
