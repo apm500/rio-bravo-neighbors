@@ -1,5 +1,6 @@
 {
-  "name": "rio-bravo-neighbors",
+  "name": "save-rio-bravo",
   "private": true,
+  "type": "module",
   "description": "Static campaign site for saveriobravo.com"
 }

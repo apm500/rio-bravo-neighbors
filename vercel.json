@@ -7,7 +7,12 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "saveriobravo.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "saveriobravo.com"
+        }
+      ],
       "destination": "https://www.saveriobravo.com/:path*",
       "permanent": true
     }

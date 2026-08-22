@@ -8,15 +8,16 @@
     });
   }
 
+  function money(n) {
+    return "$" + Number(n).toLocaleString("en-US");
+  }
+
   const homes = document.querySelector("#homes");
   const each = document.querySelector("#each");
   const homesOut = document.querySelector("#homesOut");
   const eachOut = document.querySelector("#eachOut");
   const totalOut = document.querySelector("#totalOut");
   const vsOut = document.querySelector("#vsOut");
-  function money(n) {
-    return "$" + Number(n).toLocaleString("en-US");
-  }
   function renderMath() {
     if (!homes || !each || !totalOut) return;
     const h = Number(homes.value);
@@ -39,6 +40,46 @@
     renderMath();
   }
 
+  const homeValue = document.querySelector("#homeValue");
+  const homeOut = document.querySelector("#homeOut");
+  const drop17 = document.querySelector("#drop17");
+  const drop25 = document.querySelector("#drop25");
+  function renderLoss() {
+    if (!homeValue) return;
+    const v = Number(homeValue.value);
+    if (homeOut) homeOut.textContent = money(v);
+    if (drop17) drop17.textContent = money(Math.round(v * 0.17));
+    if (drop25) drop25.textContent = money(Math.round(v * 0.25));
+  }
+  if (homeValue) {
+    homeValue.addEventListener("input", renderLoss);
+    renderLoss();
+  }
+
+  const shareBtn = document.querySelector("[data-share]");
+  if (shareBtn) {
+    shareBtn.addEventListener("click", async function () {
+      const url = "https://www.saveriobravo.com";
+      try {
+        if (navigator.share) {
+          await navigator.share({
+            title: "Save Rio Bravo",
+            text: "Keep the course. Keep the neighborhood. Neighbors are organizing to keep Rio Bravo Country Club as a golf course.",
+            url: url,
+          });
+          return;
+        }
+      } catch (_) { /* fall through */ }
+      try {
+        await navigator.clipboard.writeText(url);
+        shareBtn.textContent = "Link copied";
+        setTimeout(function () { shareBtn.textContent = "Copy the link"; }, 2200);
+      } catch (_) {
+        window.prompt("Copy this link", url);
+      }
+    });
+  }
+
   const form = document.querySelector("#pledgeForm");
   if (form) {
     const pills = form.querySelectorAll("[data-capital]");
@@ -54,7 +95,7 @@
       e.preventDefault();
       const data = new FormData(form);
       const role = form.querySelector('input[name="role"]:checked');
-      const subject = encodeURIComponent("Neighbor pledge — " + (data.get("name") || "Rio Bravo"));
+      const subject = encodeURIComponent("Save Rio Bravo pledge — " + (data.get("name") || "neighbor"));
       const body = encodeURIComponent(
         [
           "Name: " + data.get("name"),
@@ -67,7 +108,7 @@
           "How I can help:",
           data.get("help") || "",
           "",
-          "Sent from saveriobravo.com",
+          "Sent from Save Rio Bravo — saveriobravo.com",
         ].join("\n")
       );
       window.location.href = "mailto:riobravoneighbors@gmail.com?subject=" + subject + "&body=" + body;
