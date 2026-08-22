@@ -54,15 +54,15 @@
       ]
     },
     {
-      "source": "/apple-touch-icon.png",
+      "source": "/hero.mp4",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=86400"
+          "value": "public, max-age=86400, immutable"
         },
         {
           "key": "Content-Type",
-          "value": "image/png"
+          "value": "video/mp4"
         }
       ]
     }
