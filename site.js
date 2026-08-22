@@ -64,7 +64,7 @@
         if (navigator.share) {
           await navigator.share({
             title: "Save Rio Bravo",
-            text: "Keep the course. Keep the neighborhood. Neighbors are organizing to keep Rio Bravo Country Club as a golf course.",
+            text: "The golf course is going dark. Neighbors are organizing to buy 328 acres at Rio Bravo Country Club. Pledge at saveriobravo.com",
             url: url,
           });
           return;
