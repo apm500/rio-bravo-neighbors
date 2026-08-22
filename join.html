@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join · Rio Bravo Neighbors United</title>
+  <meta name="description" content="Pledge with your neighbors to buy Rio Bravo Country Club." />
+  <meta name="theme-color" content="#1B3A2F" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href="https://www.saveriobravo.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="/">
+      <span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg></span>
+      <span><strong>Rio Bravo</strong><span>Neighbors United</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="/" class="">The emergency</a>
+      <a href="/plan" class="">The plan</a>
+      <a href="/updates" class="">Updates</a>
+      <a href="/join" class="active">Join</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-outline" href="/join">Pledge</a>
+      <a class="btn btn-primary" href="/donate">Donate</a>
+    </div>
+    <button class="menu-btn" type="button" data-menu aria-label="Menu">☰</button>
+  </div>
+  <div class="wrap mobile-nav" data-mobile>
+    <a href="/">The emergency</a>
+    <a href="/plan">The plan</a>
+    <a href="/updates">Updates</a>
+    <a href="/join">Join</a>
+    <a href="/donate">Donate to the fund</a>
+  </div>
+</header>
+<section class="section">
+  <div class="wrap split split-2">
+    <div>
+      <p class="kicker" style="color:var(--fairway)">Join the buying group</p>
+      <h1 style="font-size:clamp(2rem,5vw,3rem)">We need names, streets, and numbers — not likes.</h1>
+      <p>The 2017 purchase closed because a handful of homeowners formed a corporation and went into escrow. A foreclosure sale will not wait on a group chat.</p>
+      <ul>
+        <li><strong>Steering committee.</strong> We need a chair, a treasurer, a counsel lead, and a captain per street.</li>
+        <li><strong>First meeting.</strong> Once 25 pledges are in, we call a neighborhood meeting.</li>
+        <li><strong>Direct line.</strong> <a href="mailto:riobravoneighbors@gmail.com">riobravoneighbors@gmail.com</a></li>
+      </ul>
+      <p class="muted">Want to fund title and counsel today? <a href="/donate">Open the donation page</a>.</p>
+      <img class="rounded" src="/photos/backyard-view.jpg" alt="Looking from a neighboring yard across the fairway" style="margin-top:2rem" />
+    </div>
+    
+<form class="card" id="pledgeForm">
+  <p class="kicker">Neighbor pledge</p>
+  <h3>Put your name on the list.</h3>
+  <p class="muted">A capital number is a promise of intent, not a charge. Donations to the legal fund are separate.</p>
+  <div class="form-2">
+    <div class="span-2"><label for="name">Full name</label><input id="name" name="name" required autocomplete="name" /></div>
+    <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
+    <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" /></div>
+    <div class="span-2"><label for="address">Street (so we can map the neighborhood)</label><input id="address" name="address" placeholder="Casa Club, San Domingo, Solera…" /></div>
+  </div>
+  <p style="margin:1.1rem 0 0.4rem;font-size:0.9rem;font-weight:500;color:var(--ink-soft)">Where do you stand</p>
+  <label class="role"><input type="radio" name="role" value="on-course" checked /> I live on or next to the course</label>
+  <label class="role"><input type="radio" name="role" value="nearby" /> I live in Rio Bravo / east Bakersfield</label>
+  <label class="role"><input type="radio" name="role" value="golfer" /> I play here, I don't live here</label>
+  <label class="role"><input type="radio" name="role" value="ally" /> I want to help from outside the neighborhood</label>
+  <label for="capital">Conditional capital pledge if neighbors form a buying group</label>
+  <div class="pills">
+    <button type="button" data-capital="5000">$5,000</button>
+    <button type="button" data-capital="10000">$10,000</button>
+    <button type="button" class="on" data-capital="25000">$25,000</button>
+    <button type="button" data-capital="50000">$50,000</button>
+  </div>
+  <input id="capital" name="capital" type="number" min="0" step="1000" value="25000" />
+  <label for="help">Skills, contacts, or how you want to help</label>
+  <textarea id="help" name="help" placeholder="Attorney, lender, CPA, HOA board, can host a meeting, will walk streets…"></textarea>
+  <button class="btn btn-primary btn-lg" type="submit" style="margin-top:1.25rem">Email my pledge to organizers</button>
+</form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <strong style="font-family:var(--display);font-size:1.2rem">Rio Bravo Neighbors United</strong>
+      <p class="sage">An independent neighbor campaign to keep 328 acres of Rio Bravo as a golf course and open space — not a foreclosure lot.</p>
+      <p><a href="https://www.saveriobravo.com">saveriobravo.com</a></p>
+    </div>
+    <div>
+      <p class="kicker">On this site</p>
+      <p><a href="/plan">The purchase plan</a><br/><a href="/join">Neighbor pledge</a><br/><a href="/donate">Legal fund</a><br/><a href="/updates">Updates & sources</a></p>
+    </div>
+    <div>
+      <p class="kicker">Organizers</p>
+      <p><a href="mailto:riobravoneighbors@gmail.com">riobravoneighbors@gmail.com</a></p>
+      <p class="sage" style="font-size:0.8rem">Not affiliated with Scarlet & Gray Golf Club or current ownership. Not legal advice. Verify court filings before you commit capital.</p>
+    </div>
+  </div>
+</footer>
+<script src="/site.js"></script>
+</body></html>
