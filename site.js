@@ -1,17 +1,4 @@
 (function () {
-  const heroVid = document.querySelector(".hero video");
-  if (heroVid) {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      heroVid.pause();
-      heroVid.removeAttribute("autoplay");
-    } else {
-      heroVid.muted = true;
-      const play = heroVid.play();
-      if (play && play.catch) play.catch(function () {});
-    }
-  }
-
   const menu = document.querySelector("[data-menu]");
   const panel = document.querySelector("[data-mobile]");
   if (menu && panel) {
